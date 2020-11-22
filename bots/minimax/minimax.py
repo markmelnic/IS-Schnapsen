@@ -13,7 +13,7 @@ class Bot:
     __randomize = True
 
     # Change the value depth if you want your bot to only look depth step ahead (and adapt the value method)
-    def __init__(self, randomize=True, depth=6):
+    def __init__(self, randomize=True, depth=10):
         """
         :param randomize: Whether to select randomly from moves of equal value (or to select the first always)
         :param depth:
@@ -60,15 +60,17 @@ class Bot:
             # minimax value of 'next_state'
             #value, _ = self.value(next_state)
             value, _ = self.value(next_state, depth+1) # use this version in case you want to restrict the search depth
+            
             # YOU WILL HAVE TO IMPLEMENT THESE PART OF THE ALGORITHM
             if maximizing(state):  # we are in the Maximize part of the algorithm
-                if ???:
-                    ???
-                    ???
-            else:                  # we are in the Maximize part of the algorithm
-                if ???:
-                    ???
-                    ???
+                best_value = float('-inf') if maximizing(state) else float('inf')
+                best_move = None
+                if best_value:
+                    best_move = max(moves)
+            else:  # we are in the Maximize part of the algorithm
+                best_value = float('inf')
+                if best_value:
+                    best_move = max(moves)
 
         return best_value, best_move
 
