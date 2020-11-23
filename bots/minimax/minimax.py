@@ -63,14 +63,13 @@ class Bot:
             
             # YOU WILL HAVE TO IMPLEMENT THESE PART OF THE ALGORITHM
             if maximizing(state):  # we are in the Maximize part of the algorithm
-                best_value = float('-inf') if maximizing(state) else float('inf')
-                best_move = None
+                best_value = max(value, best_value)
                 if best_value:
-                    best_move = max(moves)
+                    best_move = move
             else:  # we are in the Maximize part of the algorithm
-                best_value = float('inf')
+                best_value = min(value, best_value)
                 if best_value:
-                    best_move = max(moves)
+                    best_move = move
 
         return best_value, best_move
 
