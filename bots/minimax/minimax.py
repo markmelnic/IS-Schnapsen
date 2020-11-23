@@ -62,13 +62,13 @@ class Bot:
             value, _ = self.value(next_state, depth+1) # use this version in case you want to restrict the search depth
             
             # YOU WILL HAVE TO IMPLEMENT THESE PART OF THE ALGORITHM
-            if maximizing(state):  # we are in the Maximize part of the algorithm
-                best_value = max(value, best_value)
-                if best_value:
+            if maximizing(state):
+                if value > best_value:
+                    best_value = value
                     best_move = move
-            else:  # we are in the Maximize part of the algorithm
-                best_value = min(value, best_value)
-                if best_value:
+            else:
+                if value < best_value:
+                    best_value = value
                     best_move = move
 
         return best_value, best_move

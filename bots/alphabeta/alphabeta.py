@@ -47,7 +47,6 @@ class Bot:
             random.shuffle(moves)
 
         for move in moves:
-
             next_state = state.next(move)
             value, _ = self.value(next_state)
 
@@ -64,7 +63,7 @@ class Bot:
 
             # Prune the search tree
             # We know this state will never be chosen, so we stop evaluating its children
-            if ???:
+            if best_value < value:
                 break
 
         return best_value, best_move
