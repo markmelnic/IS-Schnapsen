@@ -98,13 +98,14 @@ class Bot:
 				# --------  *   ---------  *  --------  *  ----------- * ------------
 				#   |u|         |u-1|          |u-2|         |u-3|   	   |u-4|
 
-				probability = ???
+				probability = ((u-pc)/u)*((u-1-pc)/(u-1))*((u-2-pc)/(u-2))*((u-3-pc)/(u-3))*((u-4-pc)/(u-4))
 
 				# All that is left to do is to check whether the new probability is higher than the earlier value
 				# (to calculate the maximum). If it is, we set probability to be the new maximal probability, and the
 				# current move our new chosen move.
 				if (move[0] is not None and probability > maxProbability):
-					???
+					maxProbability = probability
+					chosen_move = move
 			#print("Played MaxProbability Card ", maxProbability, "played", chosen_move)
 			return chosen_move
 		else:
