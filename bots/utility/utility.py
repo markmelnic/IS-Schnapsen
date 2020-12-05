@@ -94,7 +94,7 @@ class Bot:
 				# --------  *   ---------  *  --------  *  ----------- * ------------
 				#   |u|         |u-1|          |u-2|         |u-3|   	   |u-4|
 
-				???
+				utility = ((u-pc)/u)*((u-1-pc)/(u-1))*((u-2-pc)/(u-2))*((u-3-pc)/(u-3))*((u-4-pc)/(u-4))
 
 				# Now we have the probability, but still want to normalise it with the costs of losing the card.
 				# E.g. playing a 10 is a higher risk of loosing points as compared with playing a Jack.
@@ -105,15 +105,15 @@ class Bot:
 				if (move[0] is not None):
 					rank = move[0] % 5
 					points = score[rank]
-					???
+					utility -= points
 				else:
 					utility = 0.0
 
 				# Now we check if the utility of the current option (move) is higher than the highest of the previous
 				# options. If so, we choose this as our new maximal utility, and this move the chosen move.
 				if (move[0] is not None and utility > maxUtility):
-					???
-					???
+					maxUtility = utility
+					chosen_move = move
 			# print("Played MaxUtility Move: ", maxUtility, "played", chosen_move)
 			return chosen_move
 		else:
