@@ -105,7 +105,7 @@ class Bot:
 				if (move[0] is not None):
 					rank = move[0] % 5
 					points = score[rank]
-					utility -= points
+					utility *= points
 				else:
 					utility = 0.0
 
