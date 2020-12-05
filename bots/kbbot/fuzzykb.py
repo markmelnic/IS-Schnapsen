@@ -50,7 +50,7 @@ class _NegFuzzySymbol(FuzzySymbol):
     def value(self):
         value = self.__symbol.value()
         # Here you will have to determine the fuzzy value of a negated symbol
-        return ???
+        return 1 - value
 
     def __invert__(self):
         return self.__symbol
@@ -119,10 +119,10 @@ class fuzzyKB(object):
         Use pythons min and max functions for lists to calculate
         """
         minvalue = []
-        for clause in ???:
+        for clause in self._clauses:
             clausevalue = []
             for symbol in clause:
                 clausevalue.append(symbol.value())
-            ???
-        return ???
+            minvalue.append(max(clausevalue))
+        return min(minvalue)
 
