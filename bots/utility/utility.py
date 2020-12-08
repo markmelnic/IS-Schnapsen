@@ -94,7 +94,7 @@ class Bot:
 				# --------  *   ---------  *  --------  *  ----------- * ------------
 				#   |u|         |u-1|          |u-2|         |u-3|   	   |u-4|
 
-				utility = ((u-pc)/u)*((u-1-pc)/(u-1))*((u-2-pc)/(u-2))*((u-3-pc)/(u-3))*((u-4-pc)/(u-4))
+				utility = abs(u-pc)/u*abs(u-1-pc)/abs(u-1)*abs(u-2-pc)/abs(u-2)*abs(u-3-pc)/abs(u-3)*abs(u-4-pc)/abs(u-4)
 
 				# Now we have the probability, but still want to normalise it with the costs of losing the card.
 				# E.g. playing a 10 is a higher risk of loosing points as compared with playing a Jack.
