@@ -107,16 +107,16 @@ def features(state):
     feature_set = []
 
     # Add player 1's points to feature set
-    p1_points = state.__p1_points
+    p1_points = state.get_points(1)
 
     # Add player 2's points to feature set
-    p2_points = state.__p2_points
+    p2_points = state.get_points(2)
 
     # Add player 1's pending points to feature set
-    p1_pending_points = state.__p1_pending_points
+    p1_pending_points = state.get_pending_points(1)
 
     # Add plauer 2's pending points to feature set
-    p2_pending_points = state.__p2_pending_points
+    p2_pending_points = state.get_pending_points(2)
 
     # Get trump suit
     trump_suit =state.get_trump_suit()
