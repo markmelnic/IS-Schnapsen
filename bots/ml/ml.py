@@ -56,7 +56,7 @@ class Bot:
             # IMPLEMENT: Add a function call so that 'value' will
             # contain the predicted value of 'next_state'
             # NOTE: This is different from the line in the minimax/alphabeta bot
-            value = next_state.make_assumption()
+            value = self.heuristic(next_state.make_assumption())
 
             if maximizing(state):
                 if value > best_value:
